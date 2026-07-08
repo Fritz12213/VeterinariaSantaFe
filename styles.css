@@ -399,15 +399,15 @@ a {
 }
 
 .floating-cross-1 {
-    animation: float 6s ease-in-out infinite;
+    /* Animación removida */
 }
 
 .floating-cross-2 {
-    animation: float 5s ease-in-out infinite 1.5s;
+    /* Animación removida */
 }
 
 .hero-svg circle {
-    animation: pulse-soft 8s ease-in-out infinite;
+    /* Animación removida */
 }
 
 /* Tarjeta flotante interactiva */
@@ -424,7 +424,6 @@ a {
     box-shadow: var(--shadow-lg);
     z-index: 3;
     border: 1px solid rgba(0, 0, 0, 0.03);
-    animation: float 4s ease-in-out infinite 0.5s;
 }
 
 .floating-card .card-icon {
@@ -460,7 +459,7 @@ a {
 
 .info-banner-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1.15fr 1.55fr 1.15fr;
     gap: 30px;
 }
 
@@ -512,23 +511,19 @@ a {
 }
 
 .services-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    justify-content: center;
 }
 
 .service-card {
     background-color: var(--white);
     border: 1px solid var(--bone-dark);
     border-radius: var(--radius-md);
-    padding: 40px;
+    padding: 30px;
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
-    width: 100%;
-    flex: 1 1 350px;
-    max-width: 370px;
 }
 
 .service-card::before {
