@@ -15,6 +15,8 @@
         rel="stylesheet">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body>
@@ -37,7 +39,6 @@
             </nav>
 
             <div class="header-actions">
-                <a href="#contacto" class="btn btn-primary btn-sm">Reservar Cita</a>
                 <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
                     <span></span>
                     <span></span>
@@ -57,7 +58,7 @@
                     <p>En Veterinaria Santa Fe ofrecemos servicios médicos de vanguardia en un ambiente higiénico y
                         cálido. Tu tranquilidad y el bienestar de tu mascota son nuestra prioridad.</p>
                     <div class="hero-actions">
-                        <a href="#contacto" class="btn btn-primary">Agendar Turno</a>
+                        <a href="#contacto" class="btn btn-primary">Contactar</a>
                         <a href="#servicios" class="btn btn-secondary">
                             Nuestros Servicios
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -85,7 +86,7 @@
                         <path d="M400,250 C400,332.8 332.8,400 250,400 C167.2,400 120,310 120,250 C120,190 167.2,100 250,100 C332.8,100 400,167.2 400,250 Z" fill="url(#boneGradient)" />
 
                         <!-- Heart above Cat -->
-                        <path d="M250 105 C245 95, 230 95, 230 110 C230 125, 250 140, 250 140 C250 140, 270 125, 270 110 C270 95, 255 95, 250 105 Z" fill="var(--mint)" opacity="0.85" />
+                        <path class="hero-heart" d="M250 105 C245 95, 230 95, 230 110 C230 125, 250 140, 250 140 C250 140, 270 125, 270 110 C270 95, 255 95, 250 105 Z" fill="var(--mint)" opacity="0.85" />
 
                         <!-- Elegant Cat Silhouette -->
                         <!-- Ears -->
@@ -208,7 +209,7 @@
                     </div>
                     <div class="info-text">
                         <span>Ubicación</span>
-                        <p>Bv. Gálvez 1520, Santa Fe</p>
+                        <p>C. Reforma Agraria 98, Santa Fe</p>
                     </div>
                 </div>
             </div>
@@ -335,8 +336,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h4>Certificación de Higiene</h4>
-                            <p>Protocolos estrictos de esterilización</p>
+                            <h4>Tu bienestar primero</h4>
+                            <p>Cuidamos la limpieza de cada rincón</p>
                         </div>
                     </div>
                 </div>
@@ -407,9 +408,8 @@
             <div class="container contact-container">
                 <div class="contact-info">
                     <span class="badge">Contacto e Información</span>
-                    <h2>¿Listo para agendar una cita?</h2>
-                    <p>Completa el formulario y nuestro equipo se pondrá en contacto contigo en la brevedad para
-                        confirmar tu turno. O escríbenos directamente a través de nuestras vías rápidas.</p>
+                    <h2>Contáctanos</h2>
+                    <p>Si tienes alguna consulta, duda o necesitas atención médica para tu mascota, no dudes en comunicarte con nosotros. Estamos para servirte.</p>
 
                     <div class="contact-details">
                         <div class="contact-detail-item">
@@ -456,108 +456,24 @@
                             </div>
                             <div>
                                 <span>Visítanos en</span>
-                                <p>Bv. Gálvez 1520, S3000 Santa Fe, Argentina</p>
+                                <p>C. Reforma Agraria 98, Santa Fe, 76755 Tequisquiapan, Qro.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="emergency-box">
-                        <div class="emergency-badge">URGENCIAS</div>
-                        <h4>Guardia Telefónica de Emergencia</h4>
-                        <p>Si tu mascota está sufriendo un accidente o crisis vital, llámanos inmediatamente al <a
-                                href="tel:4411065485"><strong>441 106 5485</strong></a>.</p>
-                    </div>
+
                 </div>
 
-                <div class="contact-form-container">
-                    <form class="contact-form" id="appointment-form">
-                        <h3>Solicitar Turno</h3>
-                        <p class="form-subtitle">Completa tus datos y nos comunicaremos contigo.</p>
-
-                        <div class="form-group">
-                            <label for="client-name">Nombre Completo *</label>
-                            <input type="text" id="client-name" name="client-name" required
-                                placeholder="Ej. Valeria Pérez">
-                            <span class="error-msg" id="error-name">Por favor ingresa tu nombre</span>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="client-phone">Teléfono *</label>
-                                <input type="tel" id="client-phone" name="client-phone" required
-                                    placeholder="Ej. 342 1234567">
-                                <span class="error-msg" id="error-phone">Ingresa un teléfono válido</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="client-email">Email *</label>
-                                <input type="email" id="client-email" name="client-email" required
-                                    placeholder="valeria@correo.com">
-                                <span class="error-msg" id="error-email">Ingresa un correo electrónico válido</span>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="pet-name">Nombre de la Mascota *</label>
-                                <input type="text" id="pet-name" name="pet-name" required placeholder="Ej. Rocky">
-                                <span class="error-msg" id="error-pet">Ingresa el nombre de tu mascota</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="pet-type">Especie *</label>
-                                <select id="pet-type" name="pet-type" required>
-                                    <option value="" disabled selected>Selecciona...</option>
-                                    <option value="perro">Perro</option>
-                                    <option value="gato">Gato</option>
-                                    <option value="ave">Ave</option>
-                                    <option value="otro">Otro Exótico</option>
-                                </select>
-                                <span class="error-msg" id="error-type">Selecciona el tipo de mascota</span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service-select">Servicio Requerido *</label>
-                            <select id="service-select" name="service-select" required>
-                                <option value="" disabled selected>Selecciona...</option>
-                                <option value="consulta">Consulta General</option>
-                                <option value="preventiva">Medicina Preventiva</option>
-                                <option value="domicilio">Atención a Domicilio</option>
-                                <option value="laboratorio">Análisis de Laboratorio</option>
-                                <option value="otro">Otro Motivo</option>
-                            </select>
-                            <span class="error-msg" id="error-service">Selecciona un servicio</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Mensaje o Motivo de Consulta</label>
-                            <textarea id="message" name="message" rows="4"
-                                placeholder="Cuéntanos brevemente el motivo del turno..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
-                            <span>Enviar Solicitud</span>
-                            <svg class="loading-spinner" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" opacity="0.25">
-                                </circle>
-                                <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-                            </svg>
-                        </button>
-
-                        <div class="form-success-alert" id="success-alert">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                            <div>
-                                <strong>¡Solicitud Enviada!</strong>
-                                <p>Nos comunicaremos contigo en las próximas horas para confirmar la fecha y hora de tu
-                                    turno.</p>
-                            </div>
-                        </div>
-                    </form>
+                <div class="map-container" style="height: 100%; min-height: 480px;">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=C.%20Reforma%20Agraria%2098%2C%20Santa%20Fe%2C%2076755%20Tequisquiapan%2C%20Qro.&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 480px; display: block;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </section>

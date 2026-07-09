@@ -80,85 +80,85 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 4. VALIDACIÓN DE FORMULARIO DE RESERVA ---
+    // --- 4. VALIDACIÓN DE FORMULARIO DE CITA ---
     const form = document.getElementById('appointment-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const successAlert = document.getElementById('success-alert');
-
-    // Elementos de entrada y sus contenedores de error
-    const inputs = {
-        name: {
-            el: document.getElementById('client-name'),
-            error: document.getElementById('error-name'),
-            validate: val => val.trim().length >= 3
-        },
-        phone: {
-            el: document.getElementById('client-phone'),
-            error: document.getElementById('error-phone'),
-            validate: val => {
-                const phoneReg = /^[0-9\s\-+()]{7,18}$/;
-                return phoneReg.test(val.trim());
-            }
-        },
-        email: {
-            el: document.getElementById('client-email'),
-            error: document.getElementById('error-email'),
-            validate: val => {
-                const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailReg.test(val.trim());
-            }
-        },
-        petName: {
-            el: document.getElementById('pet-name'),
-            error: document.getElementById('error-pet'),
-            validate: val => val.trim().length >= 1
-        },
-        petType: {
-            el: document.getElementById('pet-type'),
-            error: document.getElementById('error-type'),
-            validate: val => val !== ''
-        },
-        service: {
-            el: document.getElementById('service-select'),
-            error: document.getElementById('error-service'),
-            validate: val => val !== ''
-        }
-    };
-
-    // Función para validar un campo específico
-    function validateField(field) {
-        const inputObj = inputs[field];
-        const isValid = inputObj.validate(inputObj.el.value);
-        const group = inputObj.el.closest('.form-group');
-
-        if (isValid) {
-            group.classList.remove('has-error');
-        } else {
-            group.classList.add('has-error');
-        }
-        return isValid;
-    }
-
-    // Agregar oyentes en inputs para validación interactiva
-    Object.keys(inputs).forEach(field => {
-        const inputObj = inputs[field];
-        
-        // Validar al salir del foco (blur)
-        inputObj.el.addEventListener('blur', () => {
-            validateField(field);
-        });
-
-        // Limpiar error mientras escribe/cambia
-        inputObj.el.addEventListener('input', () => {
-            const group = inputObj.el.closest('.form-group');
-            if (inputObj.validate(inputObj.el.value)) {
-                group.classList.remove('has-error');
-            }
-        });
-    });
-
-    // Manejar envío del formulario
     if (form) {
+        const submitBtn = document.getElementById('submit-btn');
+        const successAlert = document.getElementById('success-alert');
+
+        // Elementos de entrada y sus contenedores de error
+        const inputs = {
+            name: {
+                el: document.getElementById('client-name'),
+                error: document.getElementById('error-name'),
+                validate: val => val.trim().length >= 3
+            },
+            phone: {
+                el: document.getElementById('client-phone'),
+                error: document.getElementById('error-phone'),
+                validate: val => {
+                    const phoneReg = /^[0-9\s\-+()]{7,18}$/;
+                    return phoneReg.test(val.trim());
+                }
+            },
+            email: {
+                el: document.getElementById('client-email'),
+                error: document.getElementById('error-email'),
+                validate: val => {
+                    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return emailReg.test(val.trim());
+                }
+            },
+            petName: {
+                el: document.getElementById('pet-name'),
+                error: document.getElementById('error-pet'),
+                validate: val => val.trim().length >= 1
+            },
+            petType: {
+                el: document.getElementById('pet-type'),
+                error: document.getElementById('error-type'),
+                validate: val => val !== ''
+            },
+            service: {
+                el: document.getElementById('service-select'),
+                error: document.getElementById('error-service'),
+                validate: val => val !== ''
+            }
+        };
+
+        // Función para validar un campo específico
+        function validateField(field) {
+            const inputObj = inputs[field];
+            const isValid = inputObj.validate(inputObj.el.value);
+            const group = inputObj.el.closest('.form-group');
+
+            if (isValid) {
+                group.classList.remove('has-error');
+            } else {
+                group.classList.add('has-error');
+            }
+            return isValid;
+        }
+
+        // Agregar oyentes en inputs para validación interactiva
+        Object.keys(inputs).forEach(field => {
+            const inputObj = inputs[field];
+            
+            // Validar al salir del foco (blur)
+            inputObj.el.addEventListener('blur', () => {
+                validateField(field);
+            });
+
+            // Limpiar error mientras escribe/cambia
+            inputObj.el.addEventListener('input', () => {
+                const group = inputObj.el.closest('.form-group');
+                if (inputObj.validate(inputObj.el.value)) {
+                    group.classList.remove('has-error');
+                }
+            });
+        });
+
+        // Manejar envío del formulario
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
